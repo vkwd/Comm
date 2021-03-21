@@ -1,214 +1,152 @@
-//window.addEventListener('DOMContentLoaded', isValidInput);
-
-function isValidInput() {
-    if (emptyInput()) {
-        // output.textContent = 'Error: one or more inputs need correct data';
-        // output1.textContent = 'error';
-        return;
-    }
-    output1.textContent = '';
-    outputResults();
+function d() {
+    if ("" === e() || 3500 > e() || 250000 < e()) return alert(" BP is not valid data"), f.textContent = " BP is not valid data", !0;
+    if ("" === g() || 1920 > (new Date(g())).getFullYear() || 1990 < (new Date(g())).getFullYear()) return alert("Date of birth is not valid data"), f.textContent = "dob is not valid data", !0;
+    if ("" === h() || new Date().getFullYear() < (new Date(h())).getFullYear() || 1960 > (new Date(h())).getFullYear() || isNaN(h())) return alert("Date of retirement is not valid data"), f.textContent = "dor is not valid data", !0;
+    !0;
+    //l.textContent = "";
+    f.textContent = "";
+    return !1
 }
 
 function mreset() {
-    output.textContent = '';
-    output1.textContent = '';
+    //l.textContent = '';
+    f.textContent = '';
 }
 
-function emptyInput() {
-    if (basicPay() === '' || basicPay() < 3500) {
-        alert(' BP is not valid data');
-        output1.textContent = ' BP is not valid data';
-        //     'entered BP is not valid data';
-        return true;
-    } else if (
-        doBirth() === '' ||
-        new Date(doBirth()).getFullYear() < 1920 ||
-        new Date(doBirth()).getFullYear() > 1990
-    ) {
-        //|| getEntree2a()===""
-        //|| (new Date(getEntree2a()).getFullYear())>2019)
-        alert('Date of birth is not valid data');
-        output1.textContent = 'dob is not valid data';
+function e() { return document.querySelector("#BPay").value }
 
-        return true;
-    } else if (
-        doRetirement() === '' ||
-        new Date(doRetirement()).getFullYear() > 2020 ||
-        new Date(doRetirement()).getFullYear() < 1960 ||
-        isNaN(doRetirement())
-    ) {
-        alert('Date of retirement is not valid data');
-        output1.textContent = 'date of Retirement  is not valid data';
-        return true;
+function g() { return document.querySelector("#dob").value }
+
+function h() { return new Date(document.querySelector("#dor").value) }
+
+function m() {
+    var a = new Date(g());
+    if (!isNaN(a) && 1920 < a.getFullYear() && 1990 > a.getFullYear()) {
+        alert(a);
+        var b = new Date(h());
+        console.log(b.getFullYear());
+        var c = b.getFullYear() - a.getFullYear(),
+            k = b.getMonth() - a.getMonth();
+        (0 > k || 0 === k && b.getDate() < a.getDate()) && c--;
+        a = c + 1;
+        console.log(a);
+        alert(a);
+        return document.querySelector("#agNbd").value = a
     }
-    // else if (getEntree2()==="" || getEntree2().getFullYear()<1925)
-    //{
-    // alert ("Date of birth is not valid data");
-    // return true;}
-    else {
-        output.textContent = '';
-        output1.textContent = '';
-        return false;
+    console.log(" birthdate date is invalid");
+    alert(" birthdate date is invalid");
+    return !1
+}
+
+function n() {
+    var a = m(),
+        b = {
+            17: 19.28,
+            18: 19.2,
+            19: 19.11,
+            20: 19.01,
+            21: 18.91,
+            22: 18.81,
+            23: 18.7,
+            24: 18.59,
+            25: 18.47,
+            26: 18.34,
+            27: 18.21,
+            28: 18.07,
+            29: 17.93,
+            30: 17.78,
+            31: 17.62,
+            32: 17.46,
+            33: 17.29,
+            34: 17.11,
+            35: 16.92,
+            36: 16.72,
+            37: 16.52,
+            38: 16.31,
+            39: 16.09,
+            40: 15.87,
+            41: 15.64,
+            42: 15.4,
+            43: 15.15,
+            44: 14.9,
+            45: 14.64,
+            46: 14.37,
+            47: 14.1,
+            48: 13.82,
+            49: 13.54,
+            50: 13.25,
+            51: 12.95,
+            52: 12.66,
+            53: 12.35,
+            54: 12.05,
+            55: 11.73,
+            56: 11.42,
+            57: 11.1,
+            58: 10.78,
+            59: 10.46,
+            60: 10.13,
+            61: 9.81,
+            62: 9.48,
+            63: 9.15,
+            64: 8.82,
+            65: 8.5,
+            66: 8.17,
+            67: 7.85,
+            68: 7.53,
+            69: 7.22,
+            70: 6.91,
+            71: 6.6,
+            72: 6.3,
+            73: 6.01,
+            74: 5.72,
+            75: 5.44,
+            76: 5.17,
+            77: 4.9,
+            78: 4.65,
+            79: 4.4,
+            80: 4.17,
+            81: 3.94,
+            82: 3.72,
+            83: 3.52,
+            84: 3.32,
+            85: 3.13
+        };
+    alert(b[a]);
+    a = b[a];
+    console.log(a);
+    return document.getElementById("CF").value = a
+}
+var l = document.querySelector("span"),
+    f = document.querySelector(".message-container");
+document.querySelector("button").addEventListener("click", function() {
+    if (!d()) {
+        f.textContent = "";
+        var a = m(),
+            b = n();
+        BPay = e();
+        BPay = parseInt(BPay / 6);
+        var c = Math.floor(12 * BPay * n());
+        c = document.getElementById("CV").value = c;
+        //document.querySelector("#fourth").innerHTML = "your estimated Basic pension is: \u20b9" + Math.floor(e() - e() / 3);
+        // document.querySelector("#third").innerHTML = "your age next birthday <b>" + a + "</b>";
+        // document.querySelector("#second").innerHTML = "Applicable commutation factor  is <strong>" + b + "</strong>";
+        // document.querySelector("#first").innerHTML = "Commutaion value is: '<b>' \u20b9" + c + "  '</b>'"
+        document.querySelector('#first').innerHTML =
+            `Age Next Birthday <b>: ${a}`;
+
+        document.querySelector('#second').innerHTML = `
+        Commutation Factor: ${b}`;
+
+        document.querySelector('#third').innerHTML =
+            ` Commutaion value : <b>₹${c}</b>`;
+        document.querySelector(
+            '#fourth'
+        ).innerHTML = `Basic Pension: ₹${Math.floor(
+(BPay*3))}`;
+        document.querySelector('#fifth').innerHTML =
+            `<br>
+            Reduced Pension <br>       
+            after commutation :₹${
+Math.floor(BPay * 3 - BPay)} </b>`;
     }
-}
-
-//   if (getEntree1() === ''|| getEntree1 <3500|| getEntree2() === ''|| getEntree2a()==="" || (getEntree2a().getFullYear()>2000)) {
-// alert("dates are wrong reenter!")
-//  return true;}
-// else if (isNaN(getEntree2a()))
-//{
-//  alert("DATe is invalid reneter");
-//  return true;
-
-//}
-//  else {
-//  return false;
-// }
-// }
-function outputResults() {
-    let BPay = basicPay();
-    let DOB = doBirth();
-    let DOR = doRetirement();
-    let AgeNxt = AgeNxtBday();
-    let CF = getCF();
-    let CV = getCV();
-    // let CV = getCV();
-
-    // let subTotal = entree1 + entree2 + entree3
-    //subTotal = Math.round(subTotal * 100) / 100
-    //let printSubTotal = `Entree 1: ${entree1} + Entree 2: ${entree2} + Entree 3: ${entree3} = Subtotal: ${subTotal}`;
-    document.querySelector(
-        '#fourth'
-    ).innerHTML = `your estimated Basic pension is: ₹${Math.floor(
-    basicPay() - basicPay() / 3
-  )}`;
-
-    document.querySelector('#third').innerHTML =
-        'your age next birthday' + ' ' + '<b>' + AgeNxt + '</b>';
-
-    /*let total = (subTotal * (1 + tax / 100));
-                                                                                                                                                                                              total = Math.round(total * 100) / 100;
-                                                                                                                                                                                              let printTotal = `Total: ${total}`;*/
-    document.querySelector('#second').innerHTML =
-        'Applicable commutation factor  ' + 'is <strong>' + CF + '</strong>';
-    // "Total :<span class='color-class'> " + total+"</span>";
-    // let totalTip = total * (1 + tip / 100);
-    //totalTip = Math.round(totalTip * 100) / 100;
-    //let printTotalTip = `Total Plus Tip: ${totalTip} `;
-    document.querySelector(
-        '#first'
-    ).innerHTML = `Commutaion value is: '<b>' ₹${CV}  '</b>'`;
-
-    //console.log(AgeNxt);
-}
-
-function basicPay() {
-    return document.querySelector('#BPay').value;
-}
-
-function doBirth() {
-    return document.querySelector('#dob').value;
-}
-
-function doRetirement() {
-    return new Date(document.querySelector('#dor').value);
-}
-//var today =new Date( document.querySelector('#item2a').value);
-/* if (isNaN(today)){
-                   alert("date is not valid- RE-ENTER");
-                   throw new Error;}
-                   //return;}
-                   else {
-                     alert(today);
-                     return document.querySelector('#item2a').value;*/
-// }
-/* function validate2(){
-                      console.log(getEntree2a());
-                      if (isNaN(getEntree2a())){
-                        alert("date is not valid- RE-ENTER");
-                        return true;
-                      }
-                      else{
-                        return false;
-                      }
-                    }*/
-
-function AgeNxtBday() {
-    //return document.querySelector('#item3').value;
-    //function calculate(){
-
-    var birthDate = new Date(doBirth());
-    if (!isNaN(birthDate) &&
-        birthDate.getFullYear() > 1920 &&
-        birthDate.getFullYear() < 1990
-    ) {
-        alert(birthDate);
-        //return birthDate;
-        //= new Date(document.getElementById("date").value);
-        //birthDate=calculate();
-        var today = new Date(doRetirement());
-        console.log(today.getFullYear());
-        var age = today.getFullYear() - birthDate.getFullYear();
-        var m = today.getMonth() - birthDate.getMonth();
-        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-            age--;
-        }
-        var actualAge = age + 1;
-        console.log(actualAge);
-        alert(actualAge);
-        return (document.querySelector('#agNbd').value = actualAge);
-    } else {
-        console.log(' birthdate date is invalid');
-        // document.querySelector('.message-container').textContent =
-        //     'dob is not valid data';
-        alert(' birthdate date is invalid');
-        return false;
-    }
-}
-
-//parseInt((document.getElementById("age").value = actualAge));
-
-//  else{
-//  console.log("date is invalid");
-//   return;
-//   alert ("date is invalid");
-//}
-
-//}
-//document.querySelector('#item3').value=actualAge;
-//function getTax() {
-//  return document.querySelector('#tax').value;
-
-function getCF() {
-    var actualAge = AgeNxtBday();
-    var cf = {
-        50: 10,
-        51: 11,
-        52: 12,
-        53: 13,
-        54: 14,
-        55: 15,
-        57: 10.69,
-        58: 10.0,
-        61: 9.89,
-    };
-    //return  cf[actualAge];
-    //console.log(cf[actualAge]);
-    alert(cf[actualAge]);
-    var actualCF = cf[actualAge];
-    console.log(actualCF);
-    return (document.getElementById('CF').value = actualCF);
-}
-
-function getCV() {
-    BPay = basicPay();
-    BPay = parseInt(BPay / 6);
-    let CV = Math.floor(BPay * 12 * getCF());
-    return (document.getElementById('CV').value = CV);
-}
-
-let output = document.querySelector('span');
-let output1 = document.querySelector('.message-container');
-let button = document.querySelector('button');
-button.addEventListener('click', isValidInput);
+});

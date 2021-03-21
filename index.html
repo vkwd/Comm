@@ -11,11 +11,11 @@
 
 <body>
     <div class="container">
-        <h2 align="center">Commutation Calculator for Bank Retirees</h2>
+        <h2 align="center">Commutation & BasicPension Calculator for Bank Retirees</h2>
         <form id="form">
             <div class="form-group">
                 <label for="BPay">Basic Pay</label>
-                <input placeholder="basic Pay" id="BPay" type="number" min="3500" max="100000" required title="please enter value > 3500" />
+                <input placeholder="basic Pay" id="BPay" type="number" min="3500" max="250000" required title="please enter value > 3500 < 250000" />
                 <!-- <p id="message"></p> -->
             </div>
 
@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label for="dor">Date of Retirement</label>
-                <input placeholder="Date of Retirement" id="dor" type="date" required min="1980-01-01" max="2020-12-01" />
+                <input placeholder="Date of Retirement" id="dor" type="date" required min="1980-01-01" max="2021-12-01" />
             </div>
             <!-- <p id="message2"></p> -->
             <div class="form-group">
@@ -48,44 +48,23 @@
 
             <button type="button" id="btn">Calculate Commutation</button>
             <button id="btnm" onclick="mreset()">Reset</button>
-            <!-- <div> <label for="total">Results</label>-->
-
-            <!-- <span id="first"></span><br />
-            <span id="second"></span><br />
-            <span id="third"></span><br />
-            <span id="fourth"></span> -->
-            <!-- <p id="first"></p>
-                <p id="second"></p>
-                <p id="third"></p< /div> -->
-
-            <!-- <div class="message-container">
-                        <h3>happy retirement</h3>
-                    </div> -->
-
+            
             <div class="message-container">
                 <h3>Happy Retirement!</h3>
 
                 <br />
-
-                <!-- <br />
-            <label for="total">Results</label>
-            <span class="message"></span>
-            <span id="first"></span><br />
-            <span id="second"></span><br />
-            <span id="third"></span><br />
-            <span id="fourth"></span> -->
-            </div>
-            <!-- <span id="first"></span><br />
-            <span id="second"></span><br />
-            <span id="third"></span><br />
-            <span id="fourth"></span> -->
+                <span class="message"></span>
+                          </div>
+            
         </form>
-        <span class="mve">
+    </div>
+    <div span class="mve">
         <span id="first"></span><br />
         <span id="second"></span><br />
         <span id="third"></span><br />
-        <span id="fourth"></span
-      ></span>
+        <span id="fourth"></span>
+        <span id="fifth"></span>
+
     </div>
 </body>
 <script src="script.js"></script>

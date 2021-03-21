@@ -16,7 +16,7 @@ body {
 
 .container {
     width: 400px;
-    height: 800px;
+    height: 720px;
     background: white;
     display: flex;
     flex-direction: column;
@@ -88,53 +88,29 @@ button:focus {
     /* float: right; */
     border: 1px solid black;
     border-radius: 5px;
-    width: 90%;
+    width: 100%;
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
     color: black;
 }
-
-
-/* div.message {
-    background: blue;
-    height: 280px;
-} */
-
-
-/* position: relative; */
-
-
-/* float: right;
-    background: blue;
-    width: 25%;
-    height: 300px;
-} */
 
 #first,
 #second,
 #third,
-#fourth {
-    /* position: absolute; */
-    /* left: inherit; */
-    /* display: flex; */
-    font-size: medium;
-    font-weight: bold;
+#fourth,
+#fifth {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-
-/* float: right; */
-
-
-/* float: right; */
-
-
-/* <div style="position:absolute; left:-500px; top:30px;"> */
-
-
-/* } */
-
-
-/* span.message {
-    width: 50%;
-} */
+.mve {
+    margin-top: -560px;
+    margin-left: 20px;
+    padding: 18px;
+    font-size: x-large;
+    font-weight: bold;
+    color: rgb(131, 26, 26);
+    block-size: 100px;
+}
