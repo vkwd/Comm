@@ -12,6 +12,7 @@ Commutation is not available in case of family pension.
 
 This calculator is an attempt to help bank retirees calculate the Commutation Value without refence to tables/basic pension/reduced basic pension after commutation.
  only 3 inputs are required:
+ 
 a. Basic Pay
 b. Date of Birth.
 c. Date of Retirement.
