@@ -11,25 +11,22 @@
 
 <body>
     <div class="container">
-        <h2 align="center">Commutation & BasicPension Calculator for Bank Retirees</h2>
+        <h2 align="center">Commutation/Basic Pension Calculator for Bank Retirees</h2>
         <form id="form">
             <div class="form-group">
                 <label for="BPay">Basic Pay</label>
                 <input placeholder="basic Pay" id="BPay" type="number" min="3500" max="250000" required title="please enter value > 3500 < 250000" />
-                <!-- <p id="message"></p> -->
             </div>
 
             <div class="form-group">
                 <label for="dob">Date of Birth</label>
                 <input placeholder="Date of Birth" id="dob" type="date" required min="1920-01-01" max="1980-01-01" />
-                <!-- <p id="message1"></p> -->
                 <span class="validity"></span>
             </div>
             <div class="form-group">
                 <label for="dor">Date of Retirement</label>
                 <input placeholder="Date of Retirement" id="dor" type="date" required min="1980-01-01" max="2021-12-01" />
             </div>
-            <!-- <p id="message2"></p> -->
             <div class="form-group">
                 <label for="agNbd">Age Next Birthday</label>
                 <input placeholder="Age next BD" id="agNbd" />
@@ -42,20 +39,15 @@
                 <label for="CV">Commutation value</label>
                 <input placeholder="commValue" id="CV" />
             </div>
-            <!-- <button type="button">Calculate Commutation</button>
-            <button type="reset">Reset</button> -->
             <br />
 
             <button type="button" id="btn">Calculate Commutation</button>
             <button id="btnm" onclick="mreset()">Reset</button>
-            
             <div class="message-container">
                 <h3>Happy Retirement!</h3>
-
                 <br />
                 <span class="message"></span>
-                          </div>
-            
+            </div>
         </form>
     </div>
     <div span class="mve">
@@ -66,6 +58,7 @@
         <span id="fifth"></span>
 
     </div>
+
 </body>
 <script src="script.js"></script>
 

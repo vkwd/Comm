@@ -86,21 +86,22 @@ button:focus {
 
 .message-container {
     /* float: right; */
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 5px;
     width: 100%;
     margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: red;
+    font-weight: bolder;
+    background-color: thistle;
 }
 
 #first,
 #second,
 #third,
-#fourth,
-#fifth {
+#fourth {
     display: flex;
     flex-wrap: wrap;
 }
@@ -114,3 +115,20 @@ button:focus {
     color: rgb(131, 26, 26);
     block-size: 100px;
 }
+
+
+/* float: right; */
+
+
+/* float: right; */
+
+
+/* <div style="position:absolute; left:-500px; top:30px;"> */
+
+
+/* } */
+
+
+/* span.message {
+    width: 50%;
+} */

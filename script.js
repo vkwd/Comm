@@ -1,11 +1,17 @@
 function d() {
-    if ("" === e() || 3500 > e() || 250000 < e()) return alert(" BP is not valid data"), f.textContent = " BP is not valid data", !0;
-    if ("" === g() || 1920 > (new Date(g())).getFullYear() || 1990 < (new Date(g())).getFullYear()) return alert("Date of birth is not valid data"), f.textContent = "dob is not valid data", !0;
-    if ("" === h() || new Date().getFullYear() < (new Date(h())).getFullYear() || 1960 > (new Date(h())).getFullYear() || isNaN(h())) return alert("Date of retirement is not valid data"), f.textContent = "dor is not valid data", !0;
+    if ("" === e() || 3500 > e() || 250000 < e())
+        return f.textContent = " Basic Pay invalid", !0;
+
+    if ("" === g() || 1920 > (new Date(g())).getFullYear() || 1990 < (new Date(g).getFullYear()))
+        return f.textContent = "Date of birth invalid", !0;
+    if ("" === h() || new Date().getFullYear() < (new Date(h())).getFullYear() |
+        1960 > (new Date(h())).getFullYear() || isNaN(h()))
+        return f.textContent =
+            "Date of Retirement invalid", !0;
     !0;
     //l.textContent = "";
     f.textContent = "";
-    return !1
+    return !1;
 }
 
 function mreset() {
@@ -22,24 +28,20 @@ function h() { return new Date(document.querySelector("#dor").value) }
 function m() {
     var a = new Date(g());
     if (!isNaN(a) && 1920 < a.getFullYear() && 1990 > a.getFullYear()) {
-        alert(a);
+        //alert(a);
         var b = new Date(h());
-        console.log(b.getFullYear());
+        //console.log(b.getFullYear());
         var c = b.getFullYear() - a.getFullYear(),
             k = b.getMonth() - a.getMonth();
         (0 > k || 0 === k && b.getDate() < a.getDate()) && c--;
         a = c + 1;
-        console.log(a);
-        alert(a);
         return document.querySelector("#agNbd").value = a
     }
-    console.log(" birthdate date is invalid");
-    alert(" birthdate date is invalid");
     return !1
 }
 
 function n() {
-    var a = m(),
+    let a = m(),
         b = {
             17: 19.28,
             18: 19.2,
@@ -111,42 +113,37 @@ function n() {
             84: 3.32,
             85: 3.13
         };
-    alert(b[a]);
+
     a = b[a];
-    console.log(a);
+
     return document.getElementById("CF").value = a
 }
-var l = document.querySelector("span"),
-    f = document.querySelector(".message-container");
+
+const f = document.querySelector(".message-container");
 document.querySelector("button").addEventListener("click", function() {
     if (!d()) {
         f.textContent = "";
         var a = m(),
             b = n();
         BPay = e();
-        BPay = parseInt(BPay / 6);
-        var c = Math.floor(12 * BPay * n());
+        BPay = BPay / 2;
+
+        var c = Math.ceil(12 * BPay / 3 * n());
         c = document.getElementById("CV").value = c;
-        //document.querySelector("#fourth").innerHTML = "your estimated Basic pension is: \u20b9" + Math.floor(e() - e() / 3);
-        // document.querySelector("#third").innerHTML = "your age next birthday <b>" + a + "</b>";
-        // document.querySelector("#second").innerHTML = "Applicable commutation factor  is <strong>" + b + "</strong>";
-        // document.querySelector("#first").innerHTML = "Commutaion value is: '<b>' \u20b9" + c + "  '</b>'"
         document.querySelector('#first').innerHTML =
-            `Age Next Birthday <b>: ${a}`;
-
-        document.querySelector('#second').innerHTML = `
-        Commutation Factor: ${b}`;
-
-        document.querySelector('#third').innerHTML =
-            ` Commutaion value : <b>₹${c}</b>`;
+            `Age Next Birthday <b>: ${a}
+   <br> Commutation Factor: ${b}`;
+        document.querySelector('#second').innerHTML =
+            `Commutaion Value :  ₹${c}`;
         document.querySelector(
-            '#fourth'
-        ).innerHTML = `Basic Pension: ₹${Math.floor(
-(BPay*3))}`;
-        document.querySelector('#fifth').innerHTML =
+            '#third'
+        ).innerHTML = `Basic Pension: ₹${Math.round(
+(BPay*100)/100)}
+<br>Commuted Pension:₹${Math.ceil(BPay/3)}`;
+        document.querySelector('#fourth').innerHTML =
             `<br>
             Reduced Pension <br>       
             after commutation :₹${
-Math.floor(BPay * 3 - BPay)} </b>`;
+Math.floor(BPay - BPay/3)} </b>`;
     }
 });
