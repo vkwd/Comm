@@ -16,7 +16,7 @@ body {
 
 .container {
     width: 400px;
-    height: 720px;
+    height: 850px;
     background: white;
     display: flex;
     flex-direction: column;
@@ -31,6 +31,7 @@ form {
     padding: 8px;
     border-radius: 2px;
     box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.4);
+    vertical-align: middle;
 }
 
 .form-group {
@@ -96,6 +97,7 @@ button:focus {
     color: red;
     font-weight: bolder;
     background-color: thistle;
+    text-align: center;
 }
 
 #first,
@@ -114,6 +116,17 @@ button:focus {
     font-weight: bold;
     color: rgb(131, 26, 26);
     block-size: 100px;
+    align-items: center;
+}
+
+h3,
+h4 {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 80%;
+    padding: 10px;
+    align-items: center;
+    background-color: thistle;
 }
 
 
